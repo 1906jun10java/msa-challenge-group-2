@@ -1,7 +1,6 @@
 package com.revature.employeeservice.controllers;
 
 import com.revature.employeeservice.models.Employee;
-import com.revature.employeeservice.repositories.EmployeeRepository;
 import com.revature.employeeservice.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,7 +22,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Employee>> getAllFlashcards() {
+    public ResponseEntity<List<Employee>> findAll() {
         return new ResponseEntity<>(employeeService.findAll(), HttpStatus.OK);
     }
 }
