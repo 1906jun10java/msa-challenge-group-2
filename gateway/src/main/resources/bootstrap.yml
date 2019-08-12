@@ -1,0 +1,15 @@
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+
+zuul:
+  routes:
+    employee:
+      path: /employees/*
+      service-id: employee-service
+      strip-prefix: false
+    reimbursement:
+      path: /reimbursements/*
+      service-id: reimbursement-service
+      strip-prefix: false
