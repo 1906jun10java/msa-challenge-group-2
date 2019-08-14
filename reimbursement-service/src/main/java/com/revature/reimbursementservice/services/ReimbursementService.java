@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ReimbursementService {
@@ -18,5 +19,13 @@ public class ReimbursementService {
 
     public List<Reimbursement> findAll() {
         return this.reimbursementRepository.findAll();
+    }
+
+    public Optional<Reimbursement> findById(int id) {
+        return this.reimbursementRepository.findById(id);
+    }
+
+    public List<Reimbursement> findByEmployeeId(int id) {
+        return this.reimbursementRepository.findByEmployeeId(id);
     }
 }
